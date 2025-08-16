@@ -110,6 +110,16 @@ ol {
   padding: 0;
 }
 
+button {
+  border-radius: 100px;
+  padding: 12px;
+  width: 100%;
+  font-size: large;
+  border-color: #43281c;
+  background-color: #ebded2;
+  color: #43281c;
+}
+
 .items {
   display: grid;
   grid-template-areas:
@@ -142,4 +152,44 @@ ol {
   grid-area: extras;
   font-size: small;
   color: #43281c;
+}
+
+.purchase-list {
+  display: grid;
+  grid-template-areas:
+    "st st-v"
+    "tx tx-v"
+    "tl tl-v";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  width: 100%;
+  padding: 0 25% 25px 25%;
+  font-family: "Open Sans";
+}
+
+.subtotal {
+  grid-area: st;
+}
+
+.subtotal-value {
+  grid-area: st-v;
+  text-align: end;
+}
+
+.tax {
+  grid-area: tx;
+}
+
+.tax-value {
+  grid-area: tx-v;
+  text-align: end;
+}
+
+.total {
+  grid-area: tl;
+}
+
+.total-value {
+  grid-area: tl-v;
+  text-align: end;
 }
