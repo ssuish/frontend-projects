@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="./styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <img class="nav-logo" src="https://btholt.github.io/complete-intro-to-web-dev-v3/images/coffee_masters_logo.png"
+            alt="logo">
+        <h1 class="nav-logo-title">Coffee Masters</h1>
+    </nav>
+    <main>
+        <section class="items-container container">
+            <h1>Items</h1>
+            <ol class="item-list">
+                <li class="items">
+                    <p class="qty">1x</p>
+                    <p class="name">Cappucino</p>
+                    <p class="price">$3.35</p>
+                    <div class="extras">
+                        <p>Lite foam</p>
+                    </div>
+                </li>
+                <li class="items">
+                    <p class="qty">1x</p>
+                    <p class="name">Cappucino</p>
+                    <p class="price">$3.85</p>
+                    <div class="extras">
+                        <p>Lite milk</p>
+                        <p>Double espresso</p>
+                    </div>
+                </li>
+                <li class="items">
+                    <p class="qty">1x</p>
+                    <p class="name">Croissant</p>
+                    <p class="price">$2.45</p>
+                    <div class="extras">
+                        <p>Butter</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+        <section class="payment-container">
+            <div class="payment-name container">
+                <h1>Name</h1>
+                <div class="input-group payment-name">
+                    <label for="order-name" class="input-label">Name for order</label>
+                    <input type="text" class="input-text" id="order-name" placeholder="Ford Prefect">
+                </div>
+            </div>
+            <div class="payment-options container">
+                <h1>Payment</h1>
+                <div class="input-group card-number">
+                    <label for="card" class="input-label">Card number</label>
+                    <input type="text" class="input-text" id="card" placeholder="1234 5678 9012 3456">
+                </div>
+                <div class="input-group ccv">
+                    <label for="ccv" class="input-label">CCV number</label>
+                    <input type="text" class="input-text" id="ccv" placeholder="001">
+                </div>
+            </div>
+        </section>
+        <section class="purchase-container">
+            <div class="subtotal">
+                <ul>
+                    <li>
+                        <p>Subtotal: </p>
+                        <p>$19.27</p>
+                    </li>
+                    <li>
+                        <p>Tax: </p>
+                        <p>$0.96</p>
+                    </li>
+                    <li>
+                        <p>Total: </p>
+                        <p>$20.23</p>
+                    </li>
+                </ul>
+            </div>
+            <button type="submit">Place order</button>
+        </section>
+    </main>
+</body>
+
+</html>
