@@ -4,6 +4,7 @@ let inputs = [];
 let toDisplay = "";
 let result = 0;
 const operations = ["+", "-", "x", "%", "="];
+const control = ["C", "<-"];
 
 const buttons = document.querySelectorAll(".calc-button");
 buttons.forEach((button) => {
@@ -17,11 +18,22 @@ buttons.forEach((button) => {
       console.log(inputs);
       clearResults();
       toDisplay = "0";
+    } else if (control.includes(input)) {
+      if (input === control[0]) {
+        toDisplay = "0";
+        inputs = [];
+        result = 0;
+      } else if (input === control[1]) {
+        toDisplay = toDisplay.slice(0 - 1);
+        if (toDisplay === "") {
+          toDisplay = "0";
+        }
+      }
     } else {
       if (toDisplay == "0") {
         toDisplay = input;
       } else {
-        toDisplay += input; 
+        toDisplay += input;
       }
     }
 
@@ -35,7 +47,6 @@ buttons.forEach((button) => {
 });
 
 function compute(inputs) {
-  let currentNum = 0;
   let operation = "";
   result = Number(inputs[0]);
 
@@ -46,12 +57,11 @@ function compute(inputs) {
       operation = inputs[i];
     }
 
-    if (operation != undefined || operation != "") {
+    if (operation !== undefined && operation !== "") {
       if (typeof inputs[i] === "string" && !isNaN(inputs[i])) {
         calculate(Number(inputs[i]), operation);
       }
     }
-    console.log(inputs[i], currentNum, result);
   }
 
   return result;
@@ -69,6 +79,10 @@ function calculate(input, operation) {
       result *= input;
       break;
     case "%":
+      if (input === 0) {
+        alert("Cannot divide by zero");
+        return 0;
+      }
       result /= input;
       break;
   }
