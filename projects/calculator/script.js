@@ -1,5 +1,3 @@
-//alert("Floating numbers and mod calculations is not supported.");
-
 let inputs = [];
 let toDisplay = "";
 let result = 0;
